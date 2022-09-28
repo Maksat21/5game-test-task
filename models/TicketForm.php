@@ -22,6 +22,7 @@ class TicketForm extends Model
         return [
             [['firstNumber', 'secondNumber'], 'required'],
             [['firstNumber', 'secondNumber'], 'integer', 'max' => 999999],
+            ['secondNumber', 'compare', 'compareAttribute' => 'firstNumber', 'operator' => '>'],
         ];
     }
 
